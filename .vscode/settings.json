@@ -20,4 +20,5 @@
     "titleBar.activeBackground": "#69300F",
     "titleBar.activeForeground": "#FEF9F7"
 },
+"workbench.colorTheme": "Monokai",
 }
