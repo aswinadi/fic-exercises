@@ -10,7 +10,23 @@ class LtfmEditProfileView extends StatefulWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("LtfmEditProfile"),
-        actions: const [
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: ElevatedButton.icon(
+              onPressed: () {
+                controller.save();
+                controller.setState(() {});
+              },
+              icon: const Icon(Icons.save),
+              label: const Text(
+                "Save",
+                style: TextStyle(
+                  fontSize: 12.0,
+                ),
+              ),
+            ),
+          ),
           //! 4. Tambahkan tombol Save
           //! 5. Beri padding/margin pada tombol Save sebanyak 10
           //! 6. Panggil controller.save() ketika tombol di klik
@@ -20,7 +36,34 @@ class LtfmEditProfileView extends StatefulWidget {
         child: Container(
           padding: const EdgeInsets.all(10.0),
           child: Column(
-            children: const [
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Card(
+                  child: Container(
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                        children: [
+                          QTextField(
+                            label: "email",
+                            hint: "email",
+                            validator: Validator.required,
+                            onChanged: (value) {},
+                          ),
+                          QTextField(
+                            label: "password",
+                            hint: "password",
+                            obscure: true,
+                            validator: Validator.required,
+                            onChanged: (value) {},
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              )
               //! 1. Buat sebuah Card, tambahkan Column di dalamnya
               //! 2. Tambahkan padding.all 20.0
               //! 3. Di dalam column yang ada di dalam Card, tambahkan field ini:
