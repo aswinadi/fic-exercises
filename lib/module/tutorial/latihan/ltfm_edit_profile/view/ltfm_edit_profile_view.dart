@@ -41,25 +41,23 @@ class LtfmEditProfileView extends StatefulWidget {
                 padding: const EdgeInsets.all(10.0),
                 child: Card(
                   child: Container(
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Column(
-                        children: [
-                          QTextField(
-                            label: "email",
-                            hint: "email",
-                            validator: Validator.required,
-                            onChanged: (value) {},
-                          ),
-                          QTextField(
-                            label: "password",
-                            hint: "password",
-                            obscure: true,
-                            validator: Validator.required,
-                            onChanged: (value) {},
-                          ),
-                        ],
-                      ),
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
+                      children: [
+                        QTextField(
+                          label: "email",
+                          hint: "email",
+                          validator: Validator.email,
+                          onChanged: (value) {},
+                        ),
+                        QTextField(
+                          label: "password",
+                          hint: "password",
+                          obscure: true,
+                          validator: Validator.required,
+                          onChanged: (value) {},
+                        ),
+                      ],
                     ),
                   ),
                 ),
