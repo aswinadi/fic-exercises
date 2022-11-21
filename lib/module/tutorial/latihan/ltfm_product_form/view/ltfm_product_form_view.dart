@@ -64,7 +64,7 @@ class LtfmProductFormView extends StatefulWidget {
                         validator: Validator.required,
                         value: "",
                         onChanged: (value) {},
-                        maxLines: 15,
+                        maxLength: 15,
                       ),
                       QDropdownField(
                         label: "Category",
