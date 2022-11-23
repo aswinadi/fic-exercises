@@ -172,6 +172,73 @@ class LtfmCheckoutFormView extends StatefulWidget {
                 ),
               ),
               const Divider(),
+              QDropdownField(
+                label: "Payment Method",
+                // hint: "Your roles",
+                validator: Validator.required,
+                items: const [
+                  {
+                    "label": "Cash",
+                    "value": 1,
+                  },
+                  {
+                    "label": "Credit Card",
+                    "value": 2,
+                  },
+                  {
+                    "label": "OVO",
+                    "value": 3,
+                  },
+                  {
+                    "label": "Dana",
+                    "value": 4,
+                  }
+                ],
+                onChanged: (value, label) {},
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: 40,
+                child: ElevatedButton.icon(
+                  onPressed: () async {
+                    Navigator.pop(context);
+                    await showDialog<void>(
+                      context: context,
+                      barrierDismissible: true,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: const Text('Checkout success'),
+                          content: SingleChildScrollView(
+                            child: ListBody(
+                              children: const <Widget>[
+                                Text('Your order was placed!'),
+                              ],
+                            ),
+                          ),
+                          actions: <Widget>[
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.blueGrey,
+                              ),
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: const Text("Ok"),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  },
+                  icon: const Icon(Icons.check),
+                  label: const Text(
+                    "Checkout",
+                    style: TextStyle(
+                      fontSize: 12.0,
+                    ),
+                  ),
+                ),
+              )
               //! 1. Buat dropdown,
               //? label: Payment Method
               //? opsi payment method:
