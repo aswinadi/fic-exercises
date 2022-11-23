@@ -174,7 +174,6 @@ class LtfmCheckoutFormView extends StatefulWidget {
               const Divider(),
               QDropdownField(
                 label: "Payment Method",
-                // hint: "Your roles",
                 validator: Validator.required,
                 items: const [
                   {

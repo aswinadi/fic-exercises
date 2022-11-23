@@ -71,6 +71,36 @@ class LtfmFilterDialogView extends StatefulWidget {
                         backgroundColor: Colors.blueGrey,
                       ),
                       onPressed: () async {
+                        await showDialog<void>(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: const Text('Filter'),
+                              content: SingleChildScrollView(
+                                child: ListBody(
+                                  children: <Widget>[
+                                    QDatePicker(
+                                      label: "From",
+                                      onChanged: (context) {},
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              actions: <Widget>[
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.blueGrey,
+                                  ),
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text("Filter"),
+                                ),
+                              ],
+                            );
+                          },
+                        );
                         //! 1. Tampilkan dialog, gunakan kode ini:
                         /*
                         await showDialog<void>(
